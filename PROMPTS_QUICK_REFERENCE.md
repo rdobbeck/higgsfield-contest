@@ -15,13 +15,26 @@ extreme close-up macro shot of Asian male's eyes, intense focused expression, da
 
 ---
 
-## SHOT 3: "THE TEST" (Wide Dodge)
+## SHOT 3: "THE TEST" (Split Into 2 Sub-Clips)
 
-```
-cinematic wide shot martial arts choreography, ultra minimalist white dojo with geometric doorways and glossy reflective floor, athletic Asian male in white compression shirt and tactical pants perfectly dodging spinning back kick, opponent in full black tactical gear with helmet mid-kick with motion blur, protagonist crystal clear and balanced in defensive position, dynamic action pose, volumetric overhead lighting, spatial separation between fighters, shot on ARRI Alexa 65 with Zeiss Supreme Prime 24mm lens, professional action movie cinematography, desaturated color grading with cyan highlights, photorealistic 8K --ar 9:16 --style raw --v 6.1 --q 2
-```
+**See `SHOT_3_HERO_FRAME_PROMPTS.md` for full details and alternatives.**
 
-**Save as:** `shot-3-the-test.jpeg`
+### Frame 3A: Wind-Up (generate second)
+```
+cinematic wide shot martial arts sparring, ultra minimalist white dojo with geometric doorways and glossy reflective floor, opponent in full black tactical gear with helmet planting front foot and beginning hip rotation to the left with shoulders turning away, early phase of spinning kick wind-up, weight shifting onto front leg, athletic Asian male in white compression shirt and tactical pants standing in relaxed defensive stance on the left side watching opponent's movement with knowing expression, spatial gap between fighters, volumetric overhead lighting, low camera angle emphasizing power, shot on ARRI Alexa 65 with Zeiss Supreme Prime 24mm lens, professional action movie cinematography, desaturated color grading with cyan highlights, photorealistic 8K --ar 9:16 --style raw --v 6.1 --q 2
+```
+**Save as:** `shot-3a-windup.jpeg`
+
+### Frame 3B: Dodge (generate first -- this is the key frame)
+```
+cinematic wide shot martial arts dodge moment, ultra minimalist white dojo with geometric doorways and glossy reflective floor, opponent in full black tactical gear with helmet executing powerful spinning back kick with rear leg fully extended horizontally at chest height, heavy motion blur on kicking leg, athletic Asian male in white compression shirt and tactical pants leaning torso backward narrowly avoiding the kick with inches to spare, protagonist crystal clear and in sharp focus while attacker has motion blur, dynamic tension between fighters, the kick sweeping just past the protagonist's chest, volumetric overhead lighting with dramatic shadows, low camera angle, shot on ARRI Alexa 65 with Zeiss Supreme Prime 24mm lens, professional action movie cinematography like John Wick, desaturated color grading with cyan highlights, photorealistic 8K --ar 9:16 --style raw --v 6.1 --q 2
+```
+**Save as:** `shot-3b-dodge.jpeg`
+
+### If spinning kick looks wrong, use this side kick version instead:
+```
+cinematic wide shot martial arts dodge, ultra minimalist white dojo with geometric doorways and glossy reflective floor, opponent in full black tactical gear executing powerful side kick with leg extended horizontally toward protagonist at chest height, heavy motion blur on kicking leg, athletic Asian male in white compression shirt and tactical pants leaning backward gracefully avoiding the kick by inches, protagonist sharp and in focus with composed expression, attacker blurred from speed, dramatic near-miss moment, volumetric overhead lighting, low angle cinematic composition, shot on ARRI Alexa 65 with 24mm lens, professional action movie lighting, desaturated color grading with cyan highlights, photorealistic 8K --ar 9:16 --style raw --v 6.1 --q 2
+```
 
 ---
 
