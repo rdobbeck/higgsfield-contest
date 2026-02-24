@@ -163,9 +163,13 @@ Cinematic wide shot, athlete in VR haptic suit and headset standing in motion ca
 #### Process per shot:
 1. Upload hero frame to Kling 3.0
 2. Add motion prompt
-3. Generate 3 variations
+3. Generate 3-5 variations
 4. Pick best take
-5. Upscale if needed
+5. **Extract last frame** of best take (`ffmpeg -sseof -0.04 -i clip.mp4 -frames:v 1 lastframe.png`)
+6. Use extracted last frame as hero frame input for the NEXT shot (creates visual continuity chain)
+7. Upscale if needed
+
+**SEE ALSO:** `VIDEO_COHERENCE_GUIDE.md` for detailed transition techniques and the spinning back kick fix
 
 ---
 
@@ -206,26 +210,38 @@ Subtle eye movement, pupils dilate slightly, eyes dart left then right tracking 
 ---
 
 #### SHOT 3 Generation:
-**Upload:** Hero frame (wide dodge)
+
+**IMPORTANT: The spinning back kick is the hardest motion for AI video. See `VIDEO_COHERENCE_GUIDE.md` Part 2 for five different strategies. Recommended approach below.**
+
+**Split into 2-3 sub-clips (Strategy A) with dodge-focused prompting (Strategy E):**
+
+**Clip 3A: The Wind-Up (2 seconds)**
+**Upload:** Last frame of Shot 2 (or hero frame showing opponent in fighting stance beginning to pivot)
 **Kling Motion Prompt:**
 ```
-Opponent executes spinning back kick in slow motion (240fps feel), protagonist smoothly sways back avoiding kick with effortless grace. Opponent's movement has motion blur, protagonist stays crisp. Camera locked on action. Motion intensity: High.
+Camera locked. Opponent in black tactical gear plants front foot and begins to pivot, rotating shoulders away from camera, initiating spinning movement. Fighter in white stays in defensive stance watching. Smooth continuous motion, no morphing or warping on faces or hands. Motion intensity: Medium.
+```
+
+**Clip 3B: The Kick & Dodge (2-3 seconds)**
+**Upload:** Last frame of Clip 3A (or Midjourney frame showing kick at 3/4 extension point)
+**Kling Motion Prompt:**
+```
+Camera locked, wide shot. Fighter in white gear leans back dramatically in smooth evasive movement, a black boot sweeps past just above their torso with heavy motion blur, protagonist stays crystal clear and composed. White minimalist dojo, dramatic lighting. Smooth continuous motion. Motion intensity: Medium.
 ```
 
 **Camera movement:** Locked wide
-**Duration:** 5 seconds (will trim to 7s total for full combo)
+**Duration:** 2-3 seconds per sub-clip
+**Generate:** 4-5 takes per sub-clip (action is complex)
+**Motion intensity:** Use Medium (not High) -- speed ramp in post for energy
 
-**NOTE:** You may need to generate this as 2 separate shots:
-- Shot 3A: Hook + uppercut dodge
-- Shot 3B: Spinning kick dodge
-Then combine in edit.
-
-**Generate:** 4 takes (action is complex)
+**Fallback:** If the spinning kick fails completely, replace with a side kick or jumping kick. The audience doesn't know the script -- what matters is it looks clean and the dodge looks effortless.
 
 **What to look for:**
 - Clean dodge timing
-- Spatial relationship maintained
-- Motion blur on attacker, clarity on protagonist
+- Spatial relationship maintained between fighters
+- Motion blur on attacker's leg, clarity on protagonist
+- No limb warping or extra limbs during rotation
+- Cut between sub-clips at the peak of the spin to hide the hardest rotation frames
 
 ---
 
@@ -342,12 +358,12 @@ Wide camera pulls back revealing full VR lab environment, protagonist removes VR
    - **Shot 5:** Build the glitch crescendo
    - **Shot 6:** Time the pullback reveal perfectly
 
-4. **Add transitions (15 min)**
-   - Shot 1→2: Quick cut
-   - Shot 2→3: Quick cut
-   - Shot 3→4: Cut on action
-   - Shot 4→5: Glitch transition (custom)
-   - Shot 5→6: Fade through white/blue
+4. **Add transitions (see VIDEO_COHERENCE_GUIDE.md for full details)**
+   - Shot 1→2: Hard cut on action (cut when punch is closest to landing) + impact sound on cut
+   - Shot 2→3: Hard cut + audio pre-lap (start whoosh 3 frames before visual cut)
+   - Shot 3→4: Cut on direction reversal (lean-back → lunge-forward) + speed ramp
+   - Shot 4→5: Custom glitch transition (2-frame freeze → RGB split → scan line → digital noise → Shot 5)
+   - Shot 5→6: Fade through white overexposure (ramp brightness → cross-dissolve → lab)
 
 ---
 
