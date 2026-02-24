@@ -1,0 +1,12 @@
+# Large media files (too big for GitHub)
+*.png
+*.jpeg
+*.jpg
+*.mp4
+*.mov
+
+# macOS
+.DS_Store
+
+# Temp files
+raw-footage/
